@@ -7,37 +7,41 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
+
+/* HEADER AJUSTADO */
 .header{background:linear-gradient(135deg,#1E4E79 0%,#2E75B6 100%);color:#fff;padding:0}
 .header-inner{max-width:1140px;margin:0 auto;padding:22px 28px;display:flex;align-items:center;gap:20px}
 
-/* AJUSTE NO BADGE PARA O LOGO */
+.header-text{flex:1}
+.header-text h1{font-size:20px;font-weight:700;line-height:1.3}
+.header-text p{font-size:12px;opacity:.8;margin-top:3px}
+
+.header-meta{text-align:right;font-size:12px;opacity:.8;line-height:1.8;margin-left:auto}
+.header-meta strong{opacity:1;font-size:13px}
+
+/* LOGO NO CANTO DIREITO */
 .header-badge{
-  background:#fff; /* Fundo branco para o logo */
-  border:1.5px solid rgba(255,255,255,.3);
+  background:#fff;
   border-radius:8px;
-  padding:5px;
-  text-align:center;
-  flex-shrink:0;
-  width:70px; 
-  height:70px;
+  padding:8px;
+  width:90px;
+  height:60px;
   display:flex;
   align-items:center;
   justify-content:center;
-  overflow:hidden;
+  flex-shrink:0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.header-badge img{
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
+.header-badge img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
-.header-text h1{font-size:20px;font-weight:700;line-height:1.3}
-.header-text p{font-size:12px;opacity:.8;margin-top:3px}
-.header-meta{margin-left:auto;text-align:right;font-size:12px;opacity:.8;flex-shrink:0;line-height:1.8}
-.header-meta strong{opacity:1;font-size:13px}
 .page{max-width:1140px;margin:0 auto;padding:24px 20px 60px}
 .sec{margin-bottom:32px}
 .sec-title{font-size:12px;font-weight:700;color:#1E4E79;letter-spacing:.07em;text-transform:uppercase;border-bottom:2px solid #1E4E79;padding-bottom:5px;margin-bottom:16px}
+
 /* Formula */
 .formula-box{background:#1E4E79;color:#fff;border-radius:8px;padding:13px 20px;text-align:center;font-size:19px;font-weight:700;letter-spacing:.04em;margin-bottom:8px}
 .fcard-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px;margin-bottom:12px}
@@ -49,6 +53,7 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .lcard{flex:1;background:#fff;border-radius:6px;padding:9px 13px;border:.5px solid #ddd;display:flex;justify-content:space-between;align-items:center}
 .lcard .ll{font-size:11px;color:#888}.lcard .lv{font-size:13px;font-weight:700;color:#1E4E79}
 .limit-note{font-size:11px;color:#999;margin-top:5px;text-align:center}
+
 /* Charts */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .ccart{background:#fff;border-radius:8px;padding:16px;border:.5px solid #ddd}
@@ -60,6 +65,7 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .ll2{width:18px;height:2px;border-radius:2px;display:inline-block}
 .cw{position:relative;width:100%}
 .alert-info{background:#EBF5FB;border-left:3px solid #2980B9;border-radius:0 6px 6px 0;padding:9px 13px;font-size:11.5px;color:#1A5276;margin-top:8px;line-height:1.6}
+
 /* Cliff demo */
 .cliff-ctrl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
 .cliff-ctrl span{font-size:12px;color:#555;font-weight:700;flex-shrink:0}
@@ -76,10 +82,9 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .dbar{border-radius:6px;padding:9px 13px;font-size:12px;margin-top:8px}
 .dbar-bad{background:#FDEDEC;color:#922B21;border-left:3px solid #E74C3C}
 .dbar-good{background:#EAFAF1;color:#1E8449;border-left:3px solid #27AE60}
+
 /* Calculator */
 .calc-wrap{background:#fff;border-radius:8px;padding:20px;border:.5px solid #ddd}
-
-/* ─── VPM INPUT FIELD ─── */
 .vpm-input-group{display:flex;align-items:stretch;gap:0;margin-bottom:4px}
 .vpm-prefix{background:#1E4E79;color:#fff;border-radius:6px 0 0 6px;padding:0 12px;font-size:13px;font-weight:700;display:flex;align-items:center;flex-shrink:0}
 .vpm-input{flex:1;padding:10px 12px;font-size:15px;font-weight:700;border:2px solid #1E4E79;border-left:none;border-right:none;background:#fff;color:#1E4E79;outline:none;min-width:0;text-align:right}
@@ -113,6 +118,7 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .ci .civ{font-size:16px;font-weight:700}
 .badge-piso{display:inline-block;background:#FFF3CD;color:#856404;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-top:5px}
 .badge-teto{display:inline-block;background:#CCE5FF;color:#004085;border-radius:4px;padding:2px 8px;font-size:11px;font-weight:700;margin-top:5px}
+
 /* Danos Anexo */
 .dan-list{max-height:220px;overflow-y:auto;border:1px solid #ddd;border-radius:6px;background:#fff;padding:4px 0;margin-bottom:8px}
 .dan-item{display:flex;align-items:flex-start;gap:8px;padding:5px 10px;cursor:pointer;border-bottom:.5px solid #f0f0f0;transition:background .1s}
@@ -123,11 +129,13 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .dan-item .di-desc{font-size:11.5px;color:#333;flex:1;line-height:1.4}
 .dan-item .di-fator{font-size:12px;font-weight:700;color:#1E4E79;min-width:30px;text-align:right;flex-shrink:0}
 .dan-result{background:#EBF5FB;border-left:3px solid #2E75B6;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;color:#1A5276;display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+
 /* Desconto */
 .desconto-box{background:#EAFAF1;border:1px solid #A9DFBF;border-radius:8px;padding:14px 16px;margin-top:12px}
 .desconto-box .dt{font-size:12px;font-weight:700;color:#1E8449;margin-bottom:10px}
 .desconto-val{font-size:22px;font-weight:700;color:#1E8449}
 .desconto-econ{font-size:11px;color:#555;margin-top:3px}
+
 /* Tables */
 .tbl{width:100%;border-collapse:collapse;font-size:12.5px}
 .tbl th{background:#1E4E79;color:#fff;padding:9px 11px;text-align:left;font-size:12px}
@@ -136,16 +144,19 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 .tbl tr:hover td{background:#EBF3FB}
 .green{color:#1E8449;font-weight:700}.red{color:#C0392B;font-weight:700}
 .dp{color:#E74C3C;font-size:11px}.dn{color:#27AE60;font-size:11px}
+
 /* Ref tables */
 .ref-grid{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:14px}
+
 /* Footer */
 .footer{background:#1E4E79;color:rgba(255,255,255,.7);text-align:center;padding:14px;font-size:11px;margin-top:36px}
 .footer strong{color:#fff}
+
 @media(max-width:720px){
   .charts-grid,.cliff-grid,.compare-row,.metric-grid,.ref-grid{grid-template-columns:1fr}
   .charts-grid .ccart.full{grid-column:1}
-  .header-inner{flex-direction:column;align-items:flex-start}
-  .header-meta{margin-left:0}
+  .header-inner{flex-direction:column;align-items:center;text-align:center}
+  .header-meta{margin-left:0;text-align:center}
 }
 </style>
 </head>
@@ -153,27 +164,596 @@ body{font-family:Arial,sans-serif;background:#F4F6F9;color:#222;font-size:14px}
 
 <div class="header">
   <div class="header-inner">
-    <div class="header-badge">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/LogoANM.jpg" alt="Logo ANM">
-    </div>
-    
     <div class="header-text">
       <h1>Avaliação de Cenários — Metodologia de Cálculo de Sanções</h1>
       <p>Grupo de Trabalho de Sanções · Agência Nacional de Mineração</p>
     </div>
+    
     <div class="header-meta">
       Mediana VPM (Média 2021–2025)<br><strong>R$ 524.475,97</strong><br>
       Referência: Res. 122/21
+    </div>
+
+    <!-- LOGO ANM POSICIONADO À DIREITA -->
+    <div class="header-badge">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/LogoANM.jpg" alt="Logo ANM">
     </div>
   </div>
 </div>
 
 <div class="page">
+
+<!-- FÓRMULA -->
+<div class="sec">
+  <div class="sec-title">Fórmula e componentes</div>
+  <div class="formula-box">Multa = ( BRg × FVPM ) × FP × FMA</div>
+  <div class="fcard-grid" style="margin-top:12px">
+    <div class="fcard"><div class="fc-lbl">Base de Referência</div><div class="fc-sym">BRg</div><div class="fc-desc">Percentual da mediana do VPM por gravidade. Progressão geométrica de razão 1,5 entre gravidades.</div></div>
+    <div class="fcard"><div class="fc-lbl">Fator VPM</div><div class="fc-sym">FVPM</div><div class="fc-desc">Multiplicador por faixa de faturamento. 11 faixas de 0,3 a 10,0. Reflete o porte econômico da empresa.</div></div>
+    <div class="fcard"><div class="fc-lbl">Fator de Portfólio</div><div class="fc-sym">FP</div><div class="fc-desc">Escalonamento pelo número de títulos afetados. De 1,00 (1 título) a 3,00 (acima de 200 títulos).</div></div>
+    <div class="fcard"><div class="fc-lbl">Modulação Adicional</div><div class="fc-sym">FMA</div><div class="fc-desc">Ponderação entre atenuantes, agravantes, danos concretos e reincidência.</div></div>
+  </div>
+  <div class="limits-row">
+    <div class="lcard"><div class="ll">Piso absoluto (Decreto)</div><div class="lv">R$ 2.453</div></div>
+    <div class="lcard"><div class="ll">Teto absoluto (Decreto)</div><div class="lv">R$ 1.226.298.500</div></div>
+    <div class="lcard"><div class="ll">Mediana VPM (Média 2021–2025)</div><div class="lv">R$ 524.475,97</div></div>
+  </div>
+  <div class="limit-note">Piso e teto fixados por Decreto — limites externos de hierarquia normativa superior</div>
+</div>
+
+<!-- GRÁFICOS -->
+<div class="sec">
+  <div class="sec-title">Análise comparativa: método atual vs. proposta com interpolação</div>
+  <div class="charts-grid">
+    <div class="ccart">
+      <div class="ct">Curva FVPM</div>
+      <div class="cs">Multiplicador por faixa de VPM — discreto vs. interpolado</div>
+      <div class="leg">
+        <span class="li"><span class="ll2" style="background:#2E75B6;border-top:2px dashed #2E75B6"></span>Atual (faixas fixas)</span>
+        <span class="li"><span class="ll2" style="background:#1D9E75"></span>Proposta (interpolado)</span>
+      </div>
+      <div class="cw" style="height:220px"><canvas id="fvpmChart"></canvas></div>
+    </div>
+    <div class="ccart">
+      <div class="ct">Fator de Portfólio (FP)</div>
+      <div class="cs">8 faixas com degraus vs. curva logarítmica contínua</div>
+      <div class="leg">
+        <span class="li"><span class="ll2" style="background:#D85A30;border-top:2px dashed #D85A30"></span>Atual (degraus)</span>
+        <span class="li"><span class="ll2" style="background:#7F77DD"></span>Proposta (logarítmico)</span>
+      </div>
+      <div class="cw" style="height:220px"><canvas id="fpChart"></canvas></div>
+    </div>
+    <div class="ccart full">
+      <div class="ct">Efeito de penhasco (cliff effect)</div>
+      <div class="cs">Multa G3 — fronteira de R$ 150 mil, 1 título, FMA neutro</div>
+      <div class="leg">
+        <span class="li"><span class="ll2" style="background:#E24B4A;border-top:2px dashed #E24B4A"></span>Método atual — salto abrupto na fronteira</span>
+        <span class="li"><span class="ll2" style="background:#1D9E75"></span>Proposta — variação contínua e proporcional</span>
+      </div>
+      <div class="cw" style="height:195px"><canvas id="cliffChart"></canvas></div>
+      <div class="alert-info"><strong>Como ler:</strong> As linhas mostram a multa G3 para VPM de R$ 50 mil a R$ 300 mil. A linha vermelha tracejada salta abruptamente em R$ 150 mil (+133% por R$ 1 de diferença no faturamento). A linha verde sobe de forma contínua, eliminando esse desequilíbrio.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO PENHASCO -->
+<div class="sec">
+  <div class="sec-title">Demonstração interativa do efeito de penhasco</div>
+  <div class="cliff-ctrl">
+    <span>Fronteira:</span>
+    <select id="cliffSel">
+      <option value="0">R$ 150 mil — salto 133% (0,3→0,7)</option>
+      <option value="1">R$ 524 mil — salto 86% (0,7→1,3)</option>
+      <option value="2">R$ 2 milhões — salto 54% (1,3→2,0)</option>
+      <option value="3">R$ 6 milhões — salto 50% (2,0→3,0)</option>
+      <option value="4">R$ 20 milhões — salto 37% (3,0→4,1)</option>
+      <option value="5">R$ 60 milhões — salto 29% (4,1→5,3)</option>
+      <option value="6">R$ 200 milhões — salto 23% (5,3→6,5)</option>
+      <option value="7">R$ 600 milhões — salto 20% (6,5→7,8)</option>
+      <option value="8">R$ 2 bilhões — salto 18% (7,8→9,2)</option>
+      <option value="9">R$ 10 bilhões — salto 9% (9,2→10,0)</option>
+    </select>
+    <span>Gravidade:</span>
+    <select id="cliffG">
+      <option value="1">G1</option><option value="2">G2</option>
+      <option value="3" selected>G3</option><option value="4">G4</option><option value="5">G5</option>
+    </select>
+    <span>Títulos:</span>
+    <select id="cliffT">
+      <option value="1" selected>1 título</option><option value="3">3 títulos</option>
+      <option value="6">6 títulos</option><option value="15">15 títulos</option>
+      <option value="30">30 títulos</option><option value="60">60 títulos</option>
+    </select>
+  </div>
+  <div class="cliff-grid">
+    <div class="cbox cbox-a"><div class="cblbl">Empresa A — abaixo da fronteira</div><div class="cbfine" id="cfA">—</div><div class="cbdet" id="cdA">—</div></div>
+    <div class="cbox cbox-b"><div class="cblbl">Empresa B — acima da fronteira</div><div class="cbfine" id="cfB">—</div><div class="cbdet" id="cdB">—</div></div>
+  </div>
+  <div id="diffBad" class="dbar dbar-bad">—</div>
+  <div id="diffGood" class="dbar dbar-good">—</div>
+</div>
+
+<!-- CALCULADORA -->
+<div class="sec">
+  <div class="sec-title">Calculadora interativa — informe o VPM real da empresa</div>
+  <div class="calc-wrap">
+
+    <!-- VPM INPUT PRINCIPAL -->
+    <div style="margin-bottom:6px">
+      <div style="font-size:12px;font-weight:700;color:#1E4E79;margin-bottom:8px">
+        VPM anual da empresa autuada (R$)
+        <span id="vpmBandBadge" class="vpm-band-badge">—</span>
+      </div>
+      <div class="vpm-input-group">
+        <div class="vpm-prefix">R$</div>
+        <input type="text" class="vpm-input" id="vpmInput" placeholder="Digite o VPM exato (ex: 1.500.000,00)" autocomplete="off">
+        <div class="vpm-suffix" id="vpmSuffixLbl">VPM</div>
+      </div>
+    </div>
+    <div class="vpm-slider-row">
+      <label>Ajuste rápido:</label>
+      <input type="range" min="0" max="100" value="35" id="cv" step="1">
+      <span style="font-size:11px;color:#aaa;min-width:60px;text-align:right" id="vpmSliderDisp">—</span>
+    </div>
+    <div class="vpm-hint">Você pode digitar o valor exato no campo acima ou usar o controle deslizante para estimativas.</div>
+
+    <hr class="divider">
+
+    <!-- OUTROS PARÂMETROS -->
+    <div class="ctrl-row">
+      <label>Gravidade da infração</label>
+      <select id="cg">
+        <option value="1">G1 — Levíssima · BR R$ 7.867</option>
+        <option value="2">G2 — Leve · BR R$ 11.801</option>
+        <option value="3" selected>G3 — Média · BR R$ 17.701</option>
+        <option value="4">G4 — Grave · BR R$ 26.552</option>
+        <option value="5">G5 — Gravíssima · BR R$ 39.827</option>
+      </select>
+      <span class="rv" id="brDisp">—</span>
+    </div>
+    <div class="ctrl-row">
+      <label>Títulos afetados</label>
+      <input type="number" min="1" max="9999" value="1" id="ct" step="1" style="flex:1;padding:5px 8px;font-size:13px;border:1px solid #ccc;border-radius:5px;background:#fff;color:#222">
+      <span class="rv" id="titDisp">—</span>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:#1E4E79;margin:14px 0 10px">FMA — Modulação Adicional (Ate × Agr × Dan × Rei)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px">
+      <div style="background:#F4F6F9;border-radius:6px;padding:10px 12px">
+        <div style="font-size:11px;color:#888;margin-bottom:4px">Atenuantes</div>
+        <div style="font-size:15px;font-weight:700;color:#1E4E79;margin-bottom:4px" id="ateDisp">1,00×</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="range" min="50" max="100" value="100" id="cAte" step="5" style="flex:1">
+          <span style="font-size:11px;color:#888;min-width:36px;text-align:right" id="atePct">100%</span>
+        </div>
+        <div style="font-size:10px;color:#aaa;margin-top:3px">50% (máx. redução) → 100% (sem atenuante)</div>
+      </div>
+      <div style="background:#F4F6F9;border-radius:6px;padding:10px 12px">
+        <div style="font-size:11px;color:#888;margin-bottom:4px">Agravantes</div>
+        <div style="font-size:15px;font-weight:700;color:#1E4E79;margin-bottom:4px" id="agrDisp">1,00×</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="range" min="100" max="200" value="100" id="cAgr" step="5" style="flex:1">
+          <span style="font-size:11px;color:#888;min-width:36px;text-align:right" id="agrPct">100%</span>
+        </div>
+        <div style="font-size:10px;color:#aaa;margin-top:3px">100% (sem agravante) → 200% (máx.)</div>
+      </div>
+      <div style="background:#F4F6F9;border-radius:6px;padding:10px 12px">
+        <div style="font-size:11px;color:#888;margin-bottom:4px">Reincidência</div>
+        <div style="font-size:15px;font-weight:700;color:#1E4E79;margin-bottom:4px" id="reiDisp">1,00×</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="range" min="100" max="200" value="100" id="cRei" step="5" style="flex:1">
+          <span style="font-size:11px;color:#888;min-width:36px;text-align:right" id="reiPct">100%</span>
+        </div>
+        <div style="font-size:10px;color:#aaa;margin-top:3px">100% (sem reincidência) → 200% (reincidente)</div>
+      </div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:#1E4E79;margin-bottom:6px">
+      Danos concretos — Anexo da Resolução
+      <span style="font-weight:400;color:#888;font-size:11px;margin-left:8px">Dan = 1 + maior fator selecionado (neutro = 1 se nenhum marcado)</span>
+    </div>
+    <div class="dan-list" id="danList"></div>
+    <div class="dan-result">
+      <span>Dan resultante <span id="danSel" style="color:#888;font-size:11px"></span></span>
+      <strong id="danDisp">1 (neutro)</strong>
+    </div>
+
+    <div style="background:#EBF5FB;border-left:3px solid #2E75B6;border-radius:0 6px 6px 0;padding:8px 12px;font-size:12px;color:#1A5276;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center">
+      <span>FMA resultante (Ate × Agr × Dan × Rei)</span>
+      <strong id="fmaDisp">1,00×</strong>
+    </div>
+
+    <!-- RESULTADOS -->
+    <div class="metric-grid">
+      <div class="metric"><div class="ml">Base de Referência</div><div class="mv" id="rBR">—</div><div class="ms" id="rGL">—</div></div>
+      <div class="metric"><div class="ml">FVPM interpolado</div><div class="mv" id="rFV">—</div><div class="ms" id="rBD">—</div></div>
+      <div class="metric"><div class="ml">Fator de portfólio</div><div class="mv" id="rFP">—</div><div class="ms" id="rFPS">—</div></div>
+      <div class="metric"><div class="ml">FMA</div><div class="mv" id="rFM">—</div><div class="ms" id="rFMS">—</div></div>
+    </div>
+    <div class="result-main">
+      <div class="rm-lbl">Multa calculada — metodologia aprimorada</div>
+      <div class="rm-val" id="rTotal">—</div>
+      <div class="rm-form" id="rForm">—</div>
+      <div id="rPiso" style="display:none"><span class="badge-piso">Piso (Decreto) ativo — R$ 2.453</span></div>
+      <div id="rTeto" style="display:none"><span class="badge-teto">Teto (Decreto) ativo — R$ 1,226 bi</span></div>
+    </div>
+    <div style="font-size:11px;font-weight:700;color:#555;margin-bottom:8px">Comparação com método atual (FVPM fixo + FP em degraus)</div>
+    <div class="compare-row">
+      <div class="ci"><div class="cil">Método atual</div><div class="civ red" id="rOld">—</div></div>
+      <div class="ci"><div class="cil">Proposta</div><div class="civ green" id="rNew">—</div></div>
+      <div class="ci"><div class="cil">Diferença</div><div class="civ" id="rDif">—</div></div>
+    </div>
+
+    <!-- DESCONTO POR PAGAMENTO SEM DEFESA -->
+    <div class="desconto-box">
+      <div class="dt">Desconto por pagamento sem apresentação de defesa (em teste)</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <span style="font-size:12px;color:#555;flex-shrink:0">Percentual de redução:</span>
+        <input type="range" min="0" max="70" value="30" id="cDesc" step="5" style="flex:1">
+        <span style="font-size:14px;font-weight:700;color:#1E8449;min-width:40px;text-align:right" id="descPct">30%</span>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+        <div style="background:#fff;border-radius:6px;padding:9px 11px;border:.5px solid #A9DFBF">
+          <div style="font-size:10px;color:#888;margin-bottom:2px;text-transform:uppercase">Multa dosimetrada</div>
+          <div style="font-size:15px;font-weight:700;color:#1E4E79" id="dBase">—</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px">Valor integral do processo</div>
+        </div>
+        <div style="background:#fff;border-radius:6px;padding:9px 11px;border:.5px solid #A9DFBF">
+          <div style="font-size:10px;color:#888;margin-bottom:2px;text-transform:uppercase">Redução aplicada</div>
+          <div style="font-size:15px;font-weight:700;color:#C0392B" id="dReduc">—</div>
+          <div style="font-size:10px;color:#aaa;margin-top:2px" id="dReducPct">— % do valor</div>
+        </div>
+        <div style="background:#EAFAF1;border-radius:6px;padding:9px 11px;border:.5px solid #27AE60">
+          <div style="font-size:10px;color:#888;margin-bottom:2px;text-transform:uppercase">Multa com desconto</div>
+          <div class="desconto-val" id="dFinal">—</div>
+          <div class="desconto-econ" id="dEcon">—</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:#888;margin-top:8px;font-style:italic">⚠ Percentual em discussão pelo GT Sanções — valor provisório para simulação</div>
+    </div>
+  </div>
+</div>
+
+<!-- TABELA DE CASOS -->
+<div class="sec">
+  <div class="sec-title">Simulação de casos concretos (FMA neutro)</div>
+  <table class="tbl">
+    <thead><tr><th>Perfil</th><th>VPM</th><th>Títulos</th><th>Gravidade</th><th>Multa — Método atual</th><th>Multa — Proposta</th><th>Variação</th></tr></thead>
+    <tbody id="casesTbody"></tbody>
+  </table>
+</div>
+
+<!-- TABELAS DE REFERÊNCIA -->
+<div class="sec">
+  <div class="sec-title">Tabelas de referência</div>
+  <div class="ref-grid">
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#1E4E79;margin-bottom:8px">Bases de Referência (BRg)</div>
+      <table class="tbl">
+        <thead><tr><th>Gravidade</th><th>% Mediana</th><th>BRg (R$)</th></tr></thead>
+        <tbody>
+          <tr><td>G1 — Levíssima</td><td>1,50%</td><td>7.867</td></tr>
+          <tr><td>G2 — Leve</td><td>2,25%</td><td>11.801</td></tr>
+          <tr><td>G3 — Média</td><td>3,375%</td><td>17.701</td></tr>
+          <tr><td>G4 — Grave</td><td>5,0625%</td><td>26.552</td></tr>
+          <tr><td>G5 — Gravíssima</td><td>7,59375%</td><td>39.827</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#1E4E79;margin-bottom:8px">Faixas de VPM e FVPM</div>
+      <table class="tbl">
+        <thead><tr><th>Faixa de VPM (R$)</th><th>FVPM</th></tr></thead>
+        <tbody>
+          <tr><td>Até 150 mil</td><td>0,3</td></tr>
+          <tr><td>150 mil – 524 mil</td><td>0,7</td></tr>
+          <tr><td>524 mil – 2 milhões</td><td>1,3</td></tr>
+          <tr><td>2 – 6 milhões</td><td>2,0</td></tr>
+          <tr><td>6 – 20 milhões</td><td>3,0</td></tr>
+          <tr><td>20 – 60 milhões</td><td>4,1</td></tr>
+          <tr><td>60 – 200 milhões</td><td>5,3</td></tr>
+          <tr><td>200 – 600 milhões</td><td>6,5</td></tr>
+          <tr><td>600 milhões – 2 bilhões</td><td>7,8</td></tr>
+          <tr><td>2 – 10 bilhões</td><td>9,2</td></tr>
+          <tr><td>Acima de 10 bilhões</td><td>10,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div style="font-size:12px;font-weight:700;color:#1E4E79;margin-bottom:8px">Fator de Portfólio (FP)</div>
+      <table class="tbl">
+        <thead><tr><th>Nº de títulos</th><th>FP Atual</th><th>Salto</th><th>FP Proposto</th></tr></thead>
+        <tbody id="fpTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <strong>GT Sanções — Agência Nacional de Mineração</strong> &nbsp;·&nbsp;
+  Avaliação de cenários para uso interno &nbsp;·&nbsp;
+  Mediana VPM: R$ 524.475,97 (Média 2021–2025)
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-// Lógica JS permanece idêntica à fornecida
+// ══ DADOS REAIS ══
+const PISO=2453,TETO=1226298500,MEDIANA=524475.97;
+const BRG={1:7867,2:11801,3:17701,4:26552,5:39827};
+const GLBL={1:'Levíssima',2:'Leve',3:'Média',4:'Grave',5:'Gravíssima'};
+const BANDS=[
+  {mn:0,mx:150000,f:0.3},{mn:150000,mx:524000,f:0.7},
+  {mn:524000,mx:2000000,f:1.3},{mn:2000000,mx:6000000,f:2.0},
+  {mn:6000000,mx:20000000,f:3.0},{mn:20000000,mx:60000000,f:4.1},
+  {mn:60000000,mx:200000000,f:5.3},{mn:200000000,mx:600000000,f:6.5},
+  {mn:600000000,mx:2000000000,f:7.8},{mn:2000000000,mx:10000000000,f:9.2},
+  {mn:10000000000,mx:Infinity,f:10.0}
+];
+const FPBANDS=[
+  {mn:1,mx:1,f:1.0,lbl:'1 título'},{mn:2,mx:5,f:1.3,lbl:'2 a 5'},
+  {mn:6,mx:15,f:1.6,lbl:'6 a 15'},{mn:16,mx:30,f:1.9,lbl:'16 a 30'},
+  {mn:31,mx:60,f:2.2,lbl:'31 a 60'},{mn:61,mx:100,f:2.5,lbl:'61 a 100'},
+  {mn:101,mx:200,f:2.8,lbl:'101 a 200'},{mn:201,mx:9999,f:3.0,lbl:'Acima de 200'}
+];
+const BOUNDS=[150000,524000,2000000,6000000,20000000,60000000,200000000,600000000,2000000000,10000000000];
+const BNAMES=['até R$150mil','R$150k–524k','R$524k–2mi','R$2mi–6mi','R$6mi–20mi','R$20mi–60mi','R$60mi–200mi','R$200mi–600mi','R$600mi–2bi','R$2bi–10bi','acima R$10bi'];
+
+function fvD(v){for(const b of BANDS)if(v>=b.mn&&v<b.mx)return b.f;return 10.0}
+function fvI(v){for(let i=0;i<BANDS.length-1;i++){const b=BANDS[i],n=BANDS[i+1];if(v>=b.mn&&v<b.mx)return b.f+(v-b.mn)/(b.mx-b.mn)*(n.f-b.f);}return 10.0}
+function fpD(n){for(const b of FPBANDS)if(n>=b.mn&&n<=b.mx)return b.f;return 3.0}
+function fpS(n){if(n>200)return 3.0;if(n<=1)return 1.0;return Math.min(3.0,1.0+2.0*Math.log(1+(n-1)/5)/Math.log(41))}
+function bname(v){for(let i=0;i<BANDS.length;i++)if(v>=BANDS[i].mn&&v<BANDS[i].mx)return BNAMES[i];return BNAMES[BNAMES.length-1]}
+function s2v(s){const mn=Math.log10(50000),mx=Math.log10(12000000000);return Math.round(Math.pow(10,mn+(s/100)*(mx-mn)))}
+function v2s(v){const mn=Math.log10(50000),mx=Math.log10(12000000000);return Math.round(Math.max(0,Math.min(100,(Math.log10(Math.max(50000,v))-mn)/(mx-mn)*100)))}
+function applyLimits(v){return Math.max(PISO,Math.min(TETO,v))}
+
+function fmt(v){
+  v=Math.round(v);
+  if(v>=1e9)return 'R$ '+(v/1e9).toFixed(2).replace('.',',')+' bi';
+  if(v>=1e6)return 'R$ '+(v/1e6).toFixed(2).replace('.',',')+' mi';
+  let s=v.toString(),r='',c=0;
+  for(let i=s.length-1;i>=0;i--){if(c>0&&c%3===0)r='.'+r;r=s[i]+r;c++}
+  return 'R$ '+r;
+}
+function fmts(v){v=Math.round(v);if(v>=1e9)return 'R$'+(v/1e9).toFixed(1)+'bi';if(v>=1e6)return 'R$'+(v/1e6).toFixed(1)+'mi';if(v>=1e3)return 'R$'+(v/1e3).toFixed(0)+'mil';return 'R$'+v}
+
+// ── VPM input formatting ──
+let currentVPM=s2v(35);
+function formatVPMDisplay(v){
+  v=Math.round(v);
+  let s=v.toString(),r='',c=0;
+  for(let i=s.length-1;i>=0;i--){if(c>0&&c%3===0)r='.'+r;r=s[i]+r;c++}
+  return r;
+}
+function fmtSuffix(v){
+  if(v>=1e9)return (v/1e9).toFixed(2).replace('.',',')+' bi';
+  if(v>=1e6)return (v/1e6).toFixed(2).replace('.',',')+' mi';
+  if(v>=1e3)return (v/1e3).toFixed(0)+' mil';
+  return '';
+}
+
+const vpmInput=document.getElementById('vpmInput');
+const vpmSlider=document.getElementById('cv');
+const vpmSliderDisp=document.getElementById('vpmSliderDisp');
+const vpmBandBadge=document.getElementById('vpmBandBadge');
+const vpmSuffixLbl=document.getElementById('vpmSuffixLbl');
+
+function setVPM(v,fromSlider){
+  currentVPM=Math.max(1000,v);
+  if(!fromSlider){vpmInput.value=formatVPMDisplay(currentVPM);vpmSlider.value=v2s(currentVPM)}
+  else{vpmInput.value=formatVPMDisplay(currentVPM)}
+  vpmSliderDisp.textContent=fmts(currentVPM);
+  vpmSuffixLbl.textContent=fmtSuffix(currentVPM)||'VPM';
+  vpmBandBadge.textContent=bname(currentVPM);
+  updCalc();
+}
+
+vpmInput.addEventListener('input',function(){
+  const raw=this.value.replace(/\./g,'').replace(',','.');
+  const v=parseFloat(raw);
+  if(v>0){setVPM(v,false);vpmSlider.value=v2s(v)}
+});
+vpmInput.addEventListener('blur',function(){
+  const raw=this.value.replace(/\./g,'').replace(',','.');
+  const v=parseFloat(raw)||currentVPM;
+  setVPM(v,false);
+});
+vpmSlider.addEventListener('input',function(){
+  setVPM(s2v(+this.value),true);
+});
+
+// ══ CHARTS ══
+(function(){
+  const N=400,lbls=[],dD=[],dI=[];
+  const mn=Math.log10(50000),mx=Math.log10(11000000000);
+  for(let i=0;i<=N;i++){const v=Math.pow(10,mn+(i/N)*(mx-mn));lbls.push(fmts(v));dD.push(parseFloat(fvD(v).toFixed(4)));dI.push(parseFloat(fvI(v).toFixed(4)))}
+  new Chart(document.getElementById('fvpmChart'),{type:'line',data:{labels:lbls,datasets:[
+    {label:'Atual',data:dD,borderColor:'#2E75B6',borderWidth:1.5,pointRadius:0,stepped:'before',borderDash:[5,4]},
+    {label:'Proposto',data:dI,borderColor:'#1D9E75',borderWidth:2.5,pointRadius:0}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{ticks:{maxTicksLimit:8,maxRotation:0,autoSkip:true,font:{size:10}}},y:{min:0,max:10.8,ticks:{stepSize:2,font:{size:10}}}}}});
+})();
+(function(){
+  const lbls=[],dC=[],dS=[];
+  for(let n=1;n<=250;n++){lbls.push(n);dC.push(parseFloat(fpD(n).toFixed(4)));dS.push(parseFloat(fpS(n).toFixed(4)))}
+  new Chart(document.getElementById('fpChart'),{type:'line',data:{labels:lbls,datasets:[
+    {label:'Atual',data:dC,borderColor:'#D85A30',borderWidth:1.5,pointRadius:0,stepped:'before',borderDash:[5,4]},
+    {label:'Proposto',data:dS,borderColor:'#7F77DD',borderWidth:2.5,pointRadius:0}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{ticks:{maxTicksLimit:10,autoSkip:true,font:{size:10}}},y:{min:0.9,max:3.2,ticks:{stepSize:0.5,font:{size:10}}}}}});
+})();
+(function(){
+  const BR=BRG[3],vpmRange=[];
+  for(let v=50000;v<=300000;v+=500)vpmRange.push(v);
+  const lbls=vpmRange.map(v=>fmts(v));
+  const dD=vpmRange.map(v=>applyLimits(BR*fvD(v)));
+  const dI=vpmRange.map(v=>applyLimits(BR*fvI(v)));
+  new Chart(document.getElementById('cliffChart'),{type:'line',data:{labels:lbls,datasets:[
+    {label:'Atual',data:dD,borderColor:'#E24B4A',borderWidth:2,pointRadius:0,stepped:'before',borderDash:[5,4]},
+    {label:'Proposto',data:dI,borderColor:'#1D9E75',borderWidth:2.5,pointRadius:0}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{ticks:{maxTicksLimit:10,maxRotation:0,autoSkip:true,font:{size:10}}},y:{ticks:{font:{size:10}}}}}});
+})();
+
+// ══ CLIFF DEMO ══
+function updCliff(){
+  const idx=+document.getElementById('cliffSel').value;
+  const g=+document.getElementById('cliffG').value;
+  const n=+document.getElementById('cliffT').value;
+  const b=BOUNDS[idx],BR=BRG[g],fpN=fpD(n);
+  const vA=b-1,vB=b+1;
+  const mAd=applyLimits(BR*fvD(vA)*fpN),mBd=applyLimits(BR*fvD(vB)*fpN);
+  const mAi=applyLimits(BR*fvI(vA)*fpS(n)),mBi=applyLimits(BR*fvI(vB)*fpS(n));
+  document.getElementById('cfA').textContent=fmt(mAd);
+  document.getElementById('cdA').innerHTML=`VPM: ${fmts(vA)}<br>FVPM: ${fvD(vA)} · BR(G${g}): ${fmt(BR)} · FP: ${fpN.toFixed(2)}`;
+  document.getElementById('cfB').textContent=fmt(mBd);
+  document.getElementById('cdB').innerHTML=`VPM: ${fmts(vB)}<br>FVPM: ${fvD(vB)} · BR(G${g}): ${fmt(BR)} · FP: ${fpN.toFixed(2)}`;
+  const dd=mBd-mAd,pd=Math.round((mBd/mAd-1)*100);
+  document.getElementById('diffBad').textContent=`Método atual: diferença de ${fmt(dd)} (+${pd}%) por apenas R$ 2 de faturamento.`;
+  const di=Math.abs(mBi-mAi),pi=((mBi/mAi-1)*100).toFixed(2);
+  document.getElementById('diffGood').textContent=`Proposta interpolada: diferença de apenas ${fmt(Math.round(di))} (+${pi}%) — variação contínua e proporcional.`;
+}
+['cliffSel','cliffG','cliffT'].forEach(id=>document.getElementById(id).addEventListener('change',updCliff));
+updCliff();
+
+// ══ ANEXO — DANOS CONCRETOS ══
+const DANOS=[
+  {desc:'Desestabilização de taludes naturais',f:0.1},
+  {desc:'Danos a animais de criação',f:0.2},
+  {desc:'Impacto ambiental local',f:0.2},
+  {desc:'Acidente sem afastamento',f:0.2},
+  {desc:'Danos a bens móveis',f:0.3},
+  {desc:'Danos a imóveis públicos e privados',f:0.4},
+  {desc:'Acidente com afastamento',f:0.4},
+  {desc:'Abandono de mina sem descomissionamento',f:0.5},
+  {desc:'Impacto ambiental regional',f:0.6},
+  {desc:'Bloqueio temporário de vias (ir e vir)',f:0.6},
+  {desc:'Impacto local ao lençol/aquífero',f:0.8},
+  {desc:'Comprometer abastecimento (casas isoladas)',f:0.8},
+  {desc:'Emanação de gases nocivos',f:1},
+  {desc:'Impacto regional ao lençol/aquífero',f:1},
+  {desc:'Lançamento de compostos químicos nocivos',f:1},
+  {desc:'Subsidência pontual',f:1},
+  {desc:'Surgimento de trincas e fendas',f:1},
+  {desc:'Comprometer jazidas Lei 6.567/78',f:1},
+  {desc:'Destruição de depósito fossilífero',f:1},
+  {desc:'Secagem de drenagens e nascentes',f:2},
+  {desc:'Comprometer jazidas de outras substâncias',f:2},
+  {desc:'Destruição de cavernas',f:2},
+  {desc:'Mortes isoladas fora do empreendimento',f:2},
+  {desc:'Dano ou lesão permanente ao trabalhador',f:2},
+  {desc:'Acidentes com morte na operação',f:4},
+  {desc:'Subsidência regional',f:10},
+  {desc:'Comprometer abastecimento (aglomerados)',f:10},
+  {desc:'Grandes desastres ambientais (rompimento)',f:20},
+  {desc:'Destruição de aglomerados populacionais',f:20},
+  {desc:'Grandes desastres com inúmeras mortes',f:20}
+];
+
+(function(){
+  const dl=document.getElementById('danList');
+  DANOS.forEach((d,i)=>{
+    const row=document.createElement('label');
+    row.className='dan-item';
+    row.innerHTML=`<input type="checkbox" id="dan${i}" value="${d.f}"><span class="di-desc">${d.desc}</span><span class="di-fator">${d.f}</span>`;
+    row.addEventListener('change',function(){
+      row.classList.toggle('selected',row.querySelector('input').checked);
+      updCalc();
+    });
+    dl.appendChild(row);
+  });
+})();
+
+function getDan(){
+  const checks=document.querySelectorAll('#danList input[type=checkbox]:checked');
+  if(checks.length===0)return{val:1,raw:0,label:'neutro',count:0};
+  let mx=0;
+  checks.forEach(c=>{if(+c.value>mx)mx=+c.value;});
+  const val=1+mx;
+  return{val:val,raw:mx,label:`1 + ${mx} = ${val}`,count:checks.length};
+}
+
+// ══ CALCULADORA ══
+function updCalc(){
+  const g=+document.getElementById('cg').value;
+  const vpm=currentVPM;
+  const n=Math.max(1,+document.getElementById('ct').value||1);
+  const ate=+document.getElementById('cAte').value/100;
+  const agr=+document.getElementById('cAgr').value/100;
+  const rei=+document.getElementById('cRei').value/100;
+  const danObj=getDan();
+  const dan=danObj.val;
+  const fma=ate*agr*dan*rei;
+  const descPct=+document.getElementById('cDesc').value/100;
+  const BR=BRG[g];
+  const fI=fvI(vpm),fD=fvD(vpm),fpN=fpS(n),fpO=fpD(n);
+  const rawN=BR*fI*fpN*fma,rawO=BR*fD*fpO*fma;
+  const finN=applyLimits(rawN),finO=applyLimits(rawO),diff=finN-finO;
+
+  document.getElementById('ateDisp').textContent=ate.toFixed(2)+'×';
+  document.getElementById('agrDisp').textContent=agr.toFixed(2)+'×';
+  document.getElementById('reiDisp').textContent=rei.toFixed(2)+'×';
+  document.getElementById('danDisp').textContent=danObj.count===0?'1 (neutro)':`1 + ${danObj.raw} = ${dan}`;
+  document.getElementById('fmaDisp').textContent=fma.toFixed(2)+'×';
+  document.getElementById('titDisp').textContent=`${n} título(s)`;
+  document.getElementById('brDisp').textContent=`BR=${fmt(BR)}`;
+  document.getElementById('rBR').textContent=fmt(BR);
+  document.getElementById('rFV').textContent=fI.toFixed(2);
+  document.getElementById('rFP').textContent=fpN.toFixed(3);
+  document.getElementById('rFM').textContent=fma.toFixed(2)+'×';
+  document.getElementById('rTotal').textContent=fmt(finN);
+  document.getElementById('rForm').textContent=`${fmt(BR)} × ${fI.toFixed(2)} × ${fpN.toFixed(3)} × ${fma.toFixed(2)}`;
+  document.getElementById('rPiso').style.display=rawN<=PISO?'block':'none';
+  document.getElementById('rTeto').style.display=rawN>=TETO?'block':'none';
+  document.getElementById('rOld').textContent=fmt(finO);
+  document.getElementById('rNew').textContent=fmt(finN);
+  const dEl=document.getElementById('rDif');
+  if(Math.abs(diff)<1){dEl.textContent='Igual';dEl.style.color='#888'}
+  else if(diff>0){dEl.textContent='+'+fmt(diff);dEl.style.color='#E74C3C'}
+  else{dEl.textContent='−'+fmt(Math.abs(diff));dEl.style.color='#27AE60'}
+
+  const reduc=finN*descPct;
+  const comDesc=finN-reduc;
+  document.getElementById('dBase').textContent=fmt(finN);
+  document.getElementById('dReduc').textContent='− '+fmt(reduc);
+  document.getElementById('dFinal').textContent=fmt(comDesc);
+  document.getElementById('dEcon').textContent=`Economia de ${fmt(reduc)}`;
+  document.getElementById('descPct').textContent=Math.round(descPct*100)+'%';
+}
+['cg','ct','cAte','cAgr','cRei','cDesc'].forEach(id=>document.getElementById(id).addEventListener('input',updCalc));
+setVPM(s2v(35),true);
+
+// ══ CASES TABLE ══
+const casos=[
+  ['Pequeno minerador',80000,1,3],['Médio — fronteira inf.',149999,1,3],
+  ['Médio — fronteira sup.',150001,1,3],['Médio consolidado',1200000,5,3],
+  ['Grande mineradora',40000000,30,4],['Mineradora XL',400000000,100,5],
+  ['Megaempresa',4000000000,200,5],
+];
+const tb=document.getElementById('casesTbody');
+casos.forEach(([nome,vpm,n,g])=>{
+  const old=applyLimits(BRG[g]*fvD(vpm)*fpD(n));
+  const nw=applyLimits(BRG[g]*fvI(vpm)*fpS(n));
+  const diff=nw-old;
+  const tr=document.createElement('tr');
+  const dTxt=Math.abs(diff)<1?'—':(diff>0?`<span class="dp">+${fmt(diff)}</span>`:`<span class="dn">−${fmt(Math.abs(diff))}</span>`);
+  tr.innerHTML=`<td>${nome}</td><td>${fmts(vpm)}</td><td>${n}</td><td>G${g}</td><td class="red">${fmt(old)}</td><td class="green">${fmt(nw)}</td><td>${dTxt}</td>`;
+  tb.appendChild(tr);
+});
+
+// ══ FP TABLE ══
+const fptb=document.getElementById('fpTableBody');
+let prev=null;
+FPBANDS.forEach(b=>{
+  const salto=prev?`+${((b.f/prev-1)*100).toFixed(1)}%`:'—';
+  const mid=Math.round((b.mn+Math.min(b.mx,200))/2);
+  const tr=document.createElement('tr');
+  tr.innerHTML=`<td>${b.lbl}</td><td style="font-weight:700;color:#C0392B">${b.f.toFixed(2)}</td><td style="color:#888;font-size:11px">${salto}</td><td style="font-weight:700;color:#1E8449">${fpS(mid).toFixed(3)}</td>`;
+  fptb.appendChild(tr);
+  prev=b.f;
+});
 </script>
 </body>
 </html>
